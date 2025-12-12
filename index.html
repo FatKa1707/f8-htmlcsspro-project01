@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -34,16 +35,23 @@
     <header class="fixed-header">
         <div class="content">
             <nav class="navbar">
+                <!-- Tablet/Mobile menu -->
+                <label for="menu-checkbox" class="toggle-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
+                </label>
+
                 <!-- logo -->
-                <a href="#"><img src="./assets/img/logo.svg" alt=""></a>
+                <a href="#"><img src="./assets/img/logo.svg" alt="" class="navbar-img"></a>
 
                 <!-- Navigation -->
-                <ul class="list-navbar">
+                <ul id="pc-navbar" class="list-navbar">
                     <li><a href="#">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#!">Services</a></li>
                     <li><a href="#!">Resources</a></li>
                     <li><a href="#!">Contact</a></li>
+                    <li class="show-on-mobile separate"><a href="#!">Sign In</a></li>
+                    <li class="show-on-mobile"><a href="#!">Sign Up</a></li>
                 </ul>
 
                 <!-- Action -->
@@ -52,6 +60,29 @@
                     <a href="#!" class="btn btn-action">Sign up</a>
                 </div>
             </nav>
+        </div>
+    </header>
+
+    <!-- Tablet/mobile header -->
+    <header class="mobile-header">
+        <input type="checkbox" name="" id="menu-checkbox" class="menu-checkbox" hidden>
+
+        <!-- Menu overlay -->
+        <label for="menu-checkbox" class="menu-overlay"></label>
+
+        <!-- Menu content -->
+        <div class="menu-content">
+            <a href="#"><img src="./assets/img/logo.svg" alt=""></a>
+
+            <!-- Navigation -->
+            <ul id="mobile-navbar" class="list-navbar">
+                
+            </ul>
+            <script>
+                const pcNavbar = document.querySelector('#pc-navbar');
+                const mobileNavbar = document.querySelector('#mobile-navbar');
+                mobileNavbar.innerHTML = pcNavbar.innerHTML;
+            </script>
         </div>
     </header>
 
@@ -90,7 +121,7 @@
 
                 <div class="row row-desc">
                     <p class="desc">More than 45,000+ companies trust besnik</p>
-                    <p class="desc">5 Star Ratings (2k+ Review)</p>
+                    <p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
                 </div>
 
                 <div class="images">
@@ -221,6 +252,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="view-all show-on-mobile">
+                    <a href="#!" class="btn">View All Properties</a>
                 </div>
 
     

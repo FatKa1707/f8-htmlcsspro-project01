@@ -183,6 +183,7 @@ a {
 }
 
 .clients .images .img {
+    min-width: 184px;
     padding: 20px;
     border-radius: 16px;
     transition: 0.3s;
@@ -322,7 +323,8 @@ a {
 
 .features .list {
     margin-top: 70px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -520,7 +522,6 @@ a {
 .row-quantity {
     margin-top: 110px;
     justify-content: space-between;
-    width: 1048px;
 }
 
 .row-quantity .quantity {
@@ -544,6 +545,7 @@ a {
 }
 
 .subcription .body {
+    position: relative;
     height: 370px;
     border-radius: 20px;
     background: #063183;
@@ -579,6 +581,12 @@ a {
     font-weight: 500;
 }
 
+.subcription .image {
+    position: absolute;
+    bottom: 0;
+    right: 221px;
+}
+
 /* Footer */
 
 .footer {
@@ -591,7 +599,7 @@ a {
 }
 
 .footer .row-top {
-    gap: 185px;
+    column-gap: 185px;
 }
 
 .footer .heading {
